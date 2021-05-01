@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import BadWordFilter from "bad-words";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "./ChatMessage";
@@ -22,13 +23,17 @@ const ChatRoom = () => {
 
   async function sendMsg(e) {
     e.preventDefault();
-    setFormVal("");
+    const filter = new BadWordFilter();
+    // if (filter.isProfane(formVal)) {
+    //   setFormVal(filter.clean(formVal));
+    // }
     await messagesRef.add({
       uid: auth.currentUser.uid,
-      text: formVal,
+      text: filter.clean(formVal),
       photoURL: auth.currentUser.photoURL,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    setFormVal("");
     dummy.current.scrollIntoView({ behavaior: "smooth" });
   }
 
