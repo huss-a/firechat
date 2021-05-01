@@ -24,9 +24,7 @@ const ChatRoom = () => {
   async function sendMsg(e) {
     e.preventDefault();
     const filter = new BadWordFilter();
-    // if (filter.isProfane(formVal)) {
-    //   setFormVal(filter.clean(formVal));
-    // }
+
     await messagesRef.add({
       uid: auth.currentUser.uid,
       text: filter.clean(formVal),
