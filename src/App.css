@@ -9,33 +9,30 @@ body {
 }
 
 #root {
-  height: 100vh;
+  min-height: 100%;
 }
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(59, 47, 47);
   min-height: 100vh;
-
+  background-color: rgb(34, 0, 34);
 }
 
 .App > section {
   width: 100%;
-  background-color: rgba(21, 5, 41, 0.794);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   min-width: 100vh;
   min-height: 100vh;
-
 }
 
 .messages {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,11 +58,12 @@ body {
 }
 
 .sent p {
-  background-color: green;
+  background-color: rgb(0, 97, 0);
 }
 
 .sent {
   justify-content: flex-end;
+  margin-right: 30px;
 }
 
 .sent img {
@@ -74,6 +72,7 @@ body {
 
 .received {
   justify-content: flex-start;
+  margin-left: 30px;
 }
 
 .received p {
@@ -91,8 +90,9 @@ body {
 form {
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 700px;
   margin: 20px 0px;
-  width: 80%;
   position: fixed;
   bottom: 0;
 }
