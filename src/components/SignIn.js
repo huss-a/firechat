@@ -12,12 +12,12 @@ function SignIn() {
     color: "white",
   };
   return (
-    <>
-      <h1 style={h2Styles}>Firechat 🔥</h1>
-      <button onClick={signInWithGoogle} className="btn btn-primary">
+    <div className="sign-in">
+      <h1 style={h2Styles} className="mb-4">Firechat 🔥</h1>
+      <button onClick={signInWithGoogle} className="btn btn-primary mt-4">
         Sign in with Google <i className="fab fa-google" />
       </button>
-    </>
+    </div>
   );
 }
 
